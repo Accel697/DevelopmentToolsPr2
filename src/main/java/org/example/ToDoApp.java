@@ -63,13 +63,15 @@ public class ToDoApp {
                     break;
 
                 case "done":
-                    try {
-                        int index = scanner.nextInt();
-                        list.done(index);
-                        System.out.println("Task with index " + index + " is completed!");
-                    }
-                    catch (Exception ex) {
-                        ex.printStackTrace();
+                    if (parts.length > 1) {
+                        try {
+                            int index = Integer.parseInt(parts[1]);
+                            list.done(index);
+                            System.out.println("Task with index " + index + " is completed!");
+                        }
+                        catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
                     }
                     break;
 
